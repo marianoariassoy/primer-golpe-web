@@ -1,0 +1,59 @@
+---
+import Features3 from '~/components/widgets/Features3.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Clases de tenis',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    image={{
+      src: '~/assets/images/e988686c474470d5bd33f58d721aa47c.png',
+      alt: 'Clases Image',
+    }}
+  >
+    <Fragment slot="title">Clases de tenis</Fragment>
+
+    <Fragment slot="subtitle">
+      Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec
+      quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.
+      Suspendisse vitae nisi eget tortor luctus maximus sed non lectus.
+    </Fragment>
+  </Hero>
+
+  <Features3
+    title="Profesores"
+    subtitle="Los mejores profesores de tenis con basta experiencia"
+    columns={3}
+    defaultIcon="tabler:point-filled"
+    items={[
+      {
+        title: 'Diego Sanchez',
+        description: 'Proficient in crafting visually appealing designs that convey messages effectively.',
+      },
+      {
+        title: 'Diego Sanchez',
+        description: 'Skilled at developing cohesive brand identities, including logos and brand guidelines.',
+      },
+      {
+        title: 'Diego Sanchez',
+        description: 'Experienced in creating user-friendly interfaces and optimizing user experiences.',
+      },
+      {
+        title: 'Diego Sanchez',
+        description: 'Skilled in using Photoshop, Illustrator, and InDesign to create and edit visual elements.',
+      },
+      {
+        title: 'Diego Sanchez',
+        description: 'Adept in selecting and manipulating typefaces to enhance design aesthetics.',
+      },
+      {
+        title: 'Diego Sanchez',
+        description: 'Proficient in using color to evoke emotions and enhance visual harmony.',
+      },
+    ]}
+  />
+</Layout>

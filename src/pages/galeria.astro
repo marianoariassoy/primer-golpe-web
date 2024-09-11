@@ -1,0 +1,22 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+
+const metadata = {
+  title: 'Galería de imágenes',
+};
+
+import ApiClient from '../components/ApiClient.jsx';
+---
+
+<Layout metadata={metadata}>
+  <Hero>
+    <Fragment slot="title">Galería de imágenes</Fragment>
+    <Fragment slot="subtitle">
+      Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec
+      quis lorem non massa vulputate efficitur ac at turpis.
+    </Fragment>
+  </Hero>
+  <ApiClient client:load />
+</Layout>

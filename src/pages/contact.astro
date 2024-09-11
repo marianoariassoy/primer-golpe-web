@@ -1,0 +1,33 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Contacto',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText title="Contacto" subtitle="No dudes en contactarnos por cualquiera de los siguientes medios" />
+
+  <Features2
+    items={[
+      {
+        title: 'WhatsApp',
+        description: '11 5155 7285',
+        icon: 'tabler:brand-whatsapp',
+      },
+      {
+        title: 'Email',
+        description: 'info@primergolpe.com.ar',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Ubicación',
+        description: ' Av. Ángel T. de Alvear 2100, Don Torcuato, Provincia de Buenos Aires',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+</Layout>

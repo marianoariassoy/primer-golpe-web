@@ -1,0 +1,133 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+
+const metadata = {
+  title: 'Primer Golpe Tenis',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    image={{
+      src: '~/assets/images/1ergolpe.jpg',
+      alt: 'Hero Image',
+    }}
+  >
+    <Fragment slot="title">Desde 1994 empeñados en enseñarte tenis.</Fragment>
+  </Hero>
+
+  <Note />
+
+  <h2 class="text-2xl lg:text-3xl font-bold text-center mt-16">Nuestros Servicios</h2>
+
+  <Features
+    id="features"
+    items={[
+      {
+        title: 'Clases de tenis',
+        description:
+          'lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+        icon: 'tabler:brand-tailwind',
+      },
+      {
+        title: 'Torneos internos',
+        description:
+          'lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+        icon: 'tabler:components',
+      },
+      {
+        title: 'Interclubes',
+        description:
+          'lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+        icon: 'tabler:list-check',
+      },
+      {
+        title: 'Charlas',
+        description:
+          'lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+        icon: 'tabler:rocket',
+      },
+
+      {
+        title: 'Eventos',
+        description:
+          'lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Capacitaciones',
+        description:
+          'lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+        icon: 'tabler:arrows-right-left',
+      },
+    ]}
+  />
+
+  <Stats
+    stats={[
+      { title: 'Jugadores', amount: '1000' },
+      { title: 'Torneos Realizados', amount: '22' },
+      { title: 'Equipos Interclubes', amount: '6' },
+      { title: 'Profesores', amount: '5' },
+    ]}
+  />
+
+  <Testimonials
+    title="Testimonios"
+    subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione."
+    testimonials={[
+      {
+        testimonial: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.`,
+        name: 'Mariano Arias',
+        job: 'Jugador A2',
+        image: {
+          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Mark Thompson Image',
+        },
+      },
+      {
+        testimonial: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione..`,
+        name: 'Emily Martinez',
+        job: 'Jugadora Interclubes',
+        image: {
+          src: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=772&q=80',
+          alt: 'Emily Martinez Image',
+        },
+      },
+      {
+        testimonial: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.`,
+        name: 'Laura Simmons',
+        job: 'Alumna de Raul',
+        image: {
+          src: 'https://images.unsplash.com/photo-1554727242-741c14fa561c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Laura Simmons Image',
+        },
+      },
+    ]}
+  />
+
+  <Features2
+    title="Encontranos en"
+    columns={2}
+    items={[
+      {
+        title: 'Club Atletico Caza y Pesca',
+        description: 'Av. Ángel T. de Alvear 2100, Don Torcuato, Provincia de Buenos Aires',
+      },
+      {
+        title: 'Dubai Tenis',
+        description: '5678 Lorem Ipsum St, 56789, Madrid',
+      },
+    ]}
+  />
+</Layout>
