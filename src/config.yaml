@@ -1,5 +1,5 @@
 site:
-  name: 1er Golpe Tenis
+  name: Primer Golpe Tenis
   site: 'https://primergolpe.com.ar'
   base: '/'
   trailingSlash: false

@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 .bg-primary {
-  background-color: #439f20;
+  background-color: #029835;
 }
 .text-primary,
 .text-secondary,
 .text-accent {
-  color: #439f20;
+  color: #029835;
 }
 
 @layer utilities {

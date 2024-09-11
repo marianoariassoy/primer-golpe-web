@@ -12,23 +12,32 @@ const metadata = {
   title: 'Primer Golpe Tenis',
   ignoreTitleTemplate: true,
 };
+
+import ImagesHome from '../components/ImagesHome.jsx';
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
-  <Hero
-    image={{
-      src: '~/assets/images/1ergolpe.jpg',
-      alt: 'Hero Image',
-    }}
-  >
+  <Hero>
     <Fragment slot="title">Desde 1994 empeñados en enseñarte tenis.</Fragment>
   </Hero>
 
-  <Note />
+  <ImagesHome start={0} end={4} client:load />
 
-  <h2 class="text-2xl lg:text-3xl font-bold text-center mt-16">Nuestros Servicios</h2>
+  <Features2
+    title="El arte de la formación de jugadores"
+    subtitle="En nuestra academia de tenis, estamos comprometidos con el desarrollo integral de cada uno de nuestros jugadores. Desde principiantes hasta profesionales, cada atleta que pasa por nuestras canchas encuentra un equipo de entrenadores dedicados, un ambiente de camaradería y una metodología que se adapta a sus necesidades. "
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+  <!-- 
+  <Hero
+    image={{
+      src: '~/assets/images/logos.png',
+      alt: 'Hero Image',
+    }}
+  /> -->
 
   <Features
     id="features"
@@ -36,42 +45,44 @@ const metadata = {
       {
         title: 'Clases de tenis',
         description:
-          'lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-        icon: 'tabler:brand-tailwind',
+          'En nuestra academia, ofrecemos clases de tenis diseñadas para jugadores de todas las edades y niveles, desde principiantes hasta avanzados. Nuestro equipo de entrenadores certificados adapta cada sesión según las necesidades y objetivos de cada alumno, garantizando un progreso constante y personalizado.',
+        icon: 'tabler:rocket',
       },
       {
-        title: 'Torneos internos',
+        title: 'Torneos 1er Golpe',
         description:
-          'lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-        icon: 'tabler:components',
+          'Creemos que la competencia es una parte fundamental del desarrollo de cualquier jugador. Por eso, organizamos torneos internos regulares para nuestros alumnos, brindándoles la oportunidad de poner a prueba sus habilidades en un entorno competitivo, pero a la vez amigable.',
+        icon: 'tabler:star',
       },
       {
         title: 'Interclubes',
         description:
-          'lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-        icon: 'tabler:list-check',
+          'Las competencias interclubes son una oportunidad única para nuestros jugadores de medirse frente a otros tenistas de academias y clubes de toda la región. Estos torneos no solo ofrecen un nivel de competencia más alto, sino que también permiten a los participantes experimentar la emoción de representar a nuestra academia y poner en práctica todo lo que han aprendido en un entorno competitivo y profesional.',
+        icon: 'tabler:star',
       },
       {
         title: 'Charlas',
         description:
-          'lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-        icon: 'tabler:rocket',
+          'No solo nos enfocamos en mejorar el rendimiento físico y técnico de nuestros jugadores, sino también en ofrecerles herramientas que los ayuden a crecer como atletas y personas. Por eso, organizamos charlas motivacionales y educativas, impartidas por expertos en diferentes áreas, como psicología deportiva, nutrición, gestión emocional y entrenadores de alto nivel.',
+        icon: 'tabler:bulb',
       },
 
       {
         title: 'Eventos',
         description:
-          'lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-        icon: 'tabler:bulb',
+          'En nuestra academia, ofrecemos un servicio integral de organización de eventos para que jugadores, familias y aficionados vivan experiencias inolvidables en torno al tenis. Ya sea que estés planeando un torneo, una exhibición, un evento social o corporativo, contamos con la infraestructura y el equipo especializado para hacerlo realidad.',
+        icon: 'tabler:arrows-right-left',
       },
       {
         title: 'Capacitaciones',
         description:
-          'lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-        icon: 'tabler:arrows-right-left',
+          'En nuestra academia, entendemos que el aprendizaje nunca termina. Por eso, ofrecemos capacitaciones especializadas tanto para jugadores como para entrenadores, con el objetivo de profundizar en áreas clave del tenis y elevar el nivel de competencia.',
+        icon: 'tabler:list-check',
       },
     ]}
   />
+
+  <ImagesHome start={4} end={8} client:load />
 
   <Stats
     stats={[
@@ -82,21 +93,22 @@ const metadata = {
     ]}
   />
 
+  <Note />
+
   <Testimonials
-    title="Testimonios"
-    subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione."
+    title="Lo que nuestros jugadores dicen de nosotros"
     testimonials={[
       {
-        testimonial: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.`,
-        name: 'Mariano Arias',
-        job: 'Jugador A2',
+        testimonial: `Gracias a la academia, no solo he mejorado mi técnica, sino también mi mentalidad en la cancha. El equipo de entrenadores es increíble, siempre motivándonos a dar lo mejor en cada entrenamiento.`,
+        name: 'Carlos G.',
+        job: 'Jugador Profesional',
         image: {
           src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
           alt: 'Mark Thompson Image',
         },
       },
       {
-        testimonial: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione..`,
+        testimonial: `El ambiente aquí es único. He aprendido mucho tanto de los entrenadores como de mis compañeros. El enfoque personalizado me ayudó a perfeccionar mis puntos débiles y a destacar en las competencias.`,
         name: 'Emily Martinez',
         job: 'Jugadora Interclubes',
         image: {
@@ -105,7 +117,7 @@ const metadata = {
         },
       },
       {
-        testimonial: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.`,
+        testimonial: `Lo que más aprecio de esta academia es la dedicación y el compromiso de los entrenadores. Siempre están pendientes de cada detalle, y eso ha hecho una gran diferencia en mi rendimiento. Sin duda, es el lugar perfecto para cualquier jugador que quiera alcanzar el siguiente nivel.`,
         name: 'Laura Simmons',
         job: 'Alumna de Raul',
         image: {
@@ -118,16 +130,23 @@ const metadata = {
 
   <Features2
     title="Encontranos en"
-    columns={2}
+    columns={1}
     items={[
       {
         title: 'Club Atletico Caza y Pesca',
         description: 'Av. Ángel T. de Alvear 2100, Don Torcuato, Provincia de Buenos Aires',
       },
-      {
-        title: 'Dubai Tenis',
-        description: '5678 Lorem Ipsum St, 56789, Madrid',
-      },
     ]}
   />
+
+  <section class="pb-12">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3288.478212361535!2d-58.62790049842528!3d-34.49075883980252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcbb4a4d19f145%3A0x4384a82a9a8891c2!2sClub%20Atl%C3%A9tico%20Caza%20y%20Pesca!5e0!3m2!1ses-419!2sar!4v1726089690342!5m2!1ses-419!2sar"
+      width="100%"
+      height="450"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
 </Layout>

@@ -9,12 +9,12 @@ export const headerData = {
       href: '/clases',
     },
     {
-      text: 'Galeria',
-      href: '/galeria',
-    },
-    {
       text: 'Novedades',
       href: '/blog',
+    },
+    {
+      text: 'Fotos',
+      href: '/galeria',
     },
     {
       text: 'Contacto',
