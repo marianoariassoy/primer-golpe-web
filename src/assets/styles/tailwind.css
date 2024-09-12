@@ -11,7 +11,7 @@
   color: #029835;
 }
 .border-primary {
-  border-color: white;
+  border-color: #029835;
 }
 .border-secondary {
   border-color: white;
@@ -19,8 +19,7 @@
 
 @layer utilities {
   .bg-page {
-    /* background-color: var(--aw-color-bg-page); */
-    background-color: #029835;
+    background-color: var(--aw-color-bg-page);
   }
   .bg-dark {
     background-color: var(--aw-color-bg-page-dark);
