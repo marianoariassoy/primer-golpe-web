@@ -67,7 +67,7 @@ const {
       <div>
         {
           image && (
-            <div class="relative m-auto max-w-xl">
+            <div class="relative m-auto max-w-xl rounded-2xl overflow-hidden">
               {typeof image === 'string' ? (
                 <Fragment set:html={image} />
               ) : (

@@ -1,20 +1,25 @@
 export const headerData = {
   links: [
     {
-      text: 'Nosotros',
-      href: '/about',
-    },
-    {
       text: 'Clases',
       href: '/clases',
     },
     {
-      text: 'Novedades',
-      href: '/blog',
+      text: 'Torneos',
+      href: 'https://primergolpe.com.ar/',
+      target: '_blank',
     },
     {
-      text: 'Fotos',
-      href: '/galeria',
+      text: 'Escuela',
+      href: '/escuela',
+    },
+    {
+      text: 'Nosotros',
+      href: '/nosotros',
+    },
+    {
+      text: 'Novedades',
+      href: '/blog',
     },
     {
       text: 'Contacto',

@@ -2,11 +2,11 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
+// import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Stats from '~/components/widgets/Stats.astro';
-import Testimonials from '~/components/widgets/Testimonials.astro';
+// import Testimonials from '~/components/widgets/Testimonials.astro';
 
 const metadata = {
   title: 'Primer Golpe Tenis',
@@ -17,27 +17,14 @@ import ImagesHome from '../components/ImagesHome.jsx';
 ---
 
 <Layout metadata={metadata}>
-  <Hero>
-    <Fragment slot="title">Desde 1994 empeñados en enseñarte tenis.</Fragment>
-  </Hero>
-
-  <ImagesHome start={0} end={4} client:load />
-
-  <Features2
-    title="El arte de la formación de jugadores"
-    subtitle="En nuestra academia de tenis, estamos comprometidos con el desarrollo integral de cada uno de nuestros jugadores. Desde principiantes hasta profesionales, cada atleta que pasa por nuestras canchas encuentra un equipo de entrenadores dedicados, un ambiente de camaradería y una metodología que se adapta a sus necesidades. "
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
-  <!-- 
   <Hero
     image={{
       src: '~/assets/images/logos.png',
       alt: 'Hero Image',
     }}
-  /> -->
+  >
+    <Fragment slot="title">Desde 1994 empeñados en enseñarte tenis.</Fragment>
+  </Hero>
 
   <Features
     id="features"
@@ -46,38 +33,46 @@ import ImagesHome from '../components/ImagesHome.jsx';
         title: 'Clases de tenis',
         description:
           'En nuestra academia, ofrecemos clases de tenis diseñadas para jugadores de todas las edades y niveles, desde principiantes hasta avanzados. Nuestro equipo de entrenadores certificados adapta cada sesión según las necesidades y objetivos de cada alumno, garantizando un progreso constante y personalizado.',
-        icon: 'tabler:rocket',
+        // icon: 'tabler:rocket',
+        callToAction: {
+          href: '/clases',
+          text: 'Ver más',
+          icon: 'tabler:arrow-right',
+          target: '_self',
+          variant: 'primary',
+        },
       },
       {
-        title: 'Torneos 1er Golpe',
+        title: 'Torneos',
         description:
           'Creemos que la competencia es una parte fundamental del desarrollo de cualquier jugador. Por eso, organizamos torneos internos regulares para nuestros alumnos, brindándoles la oportunidad de poner a prueba sus habilidades en un entorno competitivo, pero a la vez amigable.',
-        icon: 'tabler:star',
+        // icon: 'tabler:star',
+        callToAction: {
+          href: 'https://primergolpe.com.ar/',
+          text: 'Ver más',
+          icon: 'tabler:arrow-right',
+          target: '_blank',
+          variant: 'primary',
+        },
+      },
+      {
+        title: 'Escuela',
+        description:
+          'No solo nos enfocamos en mejorar el rendimiento físico y técnico de nuestros jugadores, sino también en ofrecerles herramientas que los ayuden a crecer como atletas y personas. Por eso, organizamos charlas motivacionales y educativas, impartidas por expertos en diferentes áreas, como psicología deportiva, nutrición, gestión emocional y entrenadores de alto nivel.',
+        // icon: 'tabler:bulb',
+        callToAction: {
+          href: '/escuela',
+          text: 'Ver más',
+          icon: 'tabler:arrow-right',
+          target: '_self',
+          variant: 'primary',
+        },
       },
       {
         title: 'Interclubes',
         description:
           'Las competencias interclubes son una oportunidad única para nuestros jugadores de medirse frente a otros tenistas de academias y clubes de toda la región. Estos torneos no solo ofrecen un nivel de competencia más alto, sino que también permiten a los participantes experimentar la emoción de representar a nuestra academia y poner en práctica todo lo que han aprendido en un entorno competitivo y profesional.',
-        icon: 'tabler:star',
-      },
-      {
-        title: 'Charlas',
-        description:
-          'No solo nos enfocamos en mejorar el rendimiento físico y técnico de nuestros jugadores, sino también en ofrecerles herramientas que los ayuden a crecer como atletas y personas. Por eso, organizamos charlas motivacionales y educativas, impartidas por expertos en diferentes áreas, como psicología deportiva, nutrición, gestión emocional y entrenadores de alto nivel.',
-        icon: 'tabler:bulb',
-      },
-
-      {
-        title: 'Eventos',
-        description:
-          'En nuestra academia, ofrecemos un servicio integral de organización de eventos para que jugadores, familias y aficionados vivan experiencias inolvidables en torno al tenis. Ya sea que estés planeando un torneo, una exhibición, un evento social o corporativo, contamos con la infraestructura y el equipo especializado para hacerlo realidad.',
-        icon: 'tabler:arrows-right-left',
-      },
-      {
-        title: 'Capacitaciones',
-        description:
-          'En nuestra academia, entendemos que el aprendizaje nunca termina. Por eso, ofrecemos capacitaciones especializadas tanto para jugadores como para entrenadores, con el objetivo de profundizar en áreas clave del tenis y elevar el nivel de competencia.',
-        icon: 'tabler:list-check',
+        // icon: 'tabler:star',
       },
     ]}
   />
@@ -93,40 +88,7 @@ import ImagesHome from '../components/ImagesHome.jsx';
     ]}
   />
 
-  <Note />
-
-  <Testimonials
-    title="Lo que nuestros jugadores dicen de nosotros"
-    testimonials={[
-      {
-        testimonial: `Gracias a la academia, no solo he mejorado mi técnica, sino también mi mentalidad en la cancha. El equipo de entrenadores es increíble, siempre motivándonos a dar lo mejor en cada entrenamiento.`,
-        name: 'Carlos G.',
-        job: 'Jugador Profesional',
-        image: {
-          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Mark Thompson Image',
-        },
-      },
-      {
-        testimonial: `El ambiente aquí es único. He aprendido mucho tanto de los entrenadores como de mis compañeros. El enfoque personalizado me ayudó a perfeccionar mis puntos débiles y a destacar en las competencias.`,
-        name: 'Emily Martinez',
-        job: 'Jugadora Interclubes',
-        image: {
-          src: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=772&q=80',
-          alt: 'Emily Martinez Image',
-        },
-      },
-      {
-        testimonial: `Lo que más aprecio de esta academia es la dedicación y el compromiso de los entrenadores. Siempre están pendientes de cada detalle, y eso ha hecho una gran diferencia en mi rendimiento. Sin duda, es el lugar perfecto para cualquier jugador que quiera alcanzar el siguiente nivel.`,
-        name: 'Laura Simmons',
-        job: 'Alumna de Raul',
-        image: {
-          src: 'https://images.unsplash.com/photo-1554727242-741c14fa561c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Laura Simmons Image',
-        },
-      },
-    ]}
-  />
+  <!-- <Note /> -->
 
   <Features2
     title="Encontranos en"

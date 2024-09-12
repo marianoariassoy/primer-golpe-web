@@ -10,10 +10,17 @@
 .text-accent {
   color: #029835;
 }
+.border-primary {
+  border-color: white;
+}
+.border-secondary {
+  border-color: white;
+}
 
 @layer utilities {
   .bg-page {
-    background-color: var(--aw-color-bg-page);
+    /* background-color: var(--aw-color-bg-page); */
+    background-color: #029835;
   }
   .bg-dark {
     background-color: var(--aw-color-bg-page-dark);
