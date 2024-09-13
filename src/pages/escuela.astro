@@ -1,0 +1,82 @@
+---
+import FAQs from '~/components/widgets/FAQs.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Escuela de tenis',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero>
+    <Fragment slot="title">Escuela de tenis</Fragment>
+
+    <Fragment slot="subtitle">
+      Nuestras clases se imparten en un ambiente profesional y a la vez cercano, donde el jugador no solo mejora sus
+      habilidades, sino que también encuentra un espacio para disfrutar y compartir la pasión por este deporte. ¡Ven y
+      descubre todo lo que puedes lograr con nosotros!
+    </Fragment>
+  </Hero>
+
+  <FAQs
+    title="¿Qué ofrecemos en nuestras clases?"
+    items={[
+      {
+        title: 'Entrenamiento Técnico',
+        description: ' Perfecciona tus golpes, servicio, volea y revés con correcciones técnicas precisas.',
+      },
+      {
+        title: 'Desarrollo Táctico',
+        description: 'Aprende a leer el juego y a aplicar estrategias efectivas en cada punto.',
+      },
+      {
+        title: 'Preparación Física',
+        description:
+          'Mejora tu condición física con ejercicios específicos para el tenis, que aumentarán tu resistencia, velocidad y agilidad en la cancha.',
+      },
+      {
+        title: 'Entrenamiento Mental',
+        description:
+          'Fortalece tu concentración y gestión emocional para mantener la calma bajo presión y enfrentar con confianza los momentos decisivos.',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </FAQs>
+
+  <Features3
+    title="Profesores"
+    columns={3}
+    defaultIcon="tabler:point-filled"
+    items={[
+      {
+        title: 'Diego Sanchez',
+        description: 'Proficient in crafting visually appealing designs that convey messages effectively.',
+      },
+      {
+        title: 'Diego Sanchez',
+        description: 'Skilled at developing cohesive brand identities, including logos and brand guidelines.',
+      },
+      {
+        title: 'Diego Sanchez',
+        description: 'Experienced in creating user-friendly interfaces and optimizing user experiences.',
+      },
+      {
+        title: 'Diego Sanchez',
+        description: 'Skilled in using Photoshop, Illustrator, and InDesign to create and edit visual elements.',
+      },
+      {
+        title: 'Diego Sanchez',
+        description: 'Adept in selecting and manipulating typefaces to enhance design aesthetics.',
+      },
+      {
+        title: 'Diego Sanchez',
+        description: 'Proficient in using color to evoke emotions and enhance visual harmony.',
+      },
+    ]}
+  />
+</Layout>

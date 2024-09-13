@@ -2,21 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.bg-primary {
-  background-color: #029835;
-}
-.text-primary,
-.text-secondary,
-.text-accent {
-  color: #029835;
-}
-.border-primary {
-  border-color: #029835;
-}
-.border-secondary {
-  border-color: white;
-}
-
 @layer utilities {
   .bg-page {
     background-color: var(--aw-color-bg-page);
@@ -54,7 +39,7 @@
 }
 
 #header.scroll > div:first-child {
-  @apply bg-page md:bg-white/90 md:backdrop-blur-md;
+  @apply bg-page bg-primary;
   box-shadow: 0 0.375rem 1.5rem 0 rgb(140 152 164 / 13%);
 }
 .dark #header.scroll > div:first-child,
@@ -62,9 +47,6 @@
   @apply bg-page md:bg-[#030621e6] border-b border-gray-500/20;
   box-shadow: none;
 }
-/* #header.scroll > div:last-child {
-  @apply py-3;
-} */
 
 #header.expanded nav {
   position: fixed;

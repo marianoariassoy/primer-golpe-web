@@ -1,12 +1,12 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
+import HeroMain from '~/components/Hero.astro';
 import Hero from '~/components/widgets/Hero.astro';
-// import Note from '~/components/widgets/Note.astro';
-import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Stats from '~/components/widgets/Stats.astro';
-// import Testimonials from '~/components/widgets/Testimonials.astro';
+import Note from '~/components/widgets/Note.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
 
 const metadata = {
   title: 'Primer Golpe Tenis',
@@ -17,85 +17,144 @@ import ImagesHome from '../components/ImagesHome.jsx';
 ---
 
 <Layout metadata={metadata}>
-  <Hero
-    image={{
-      src: '~/assets/images/logos.png',
-      alt: 'Hero Image',
-    }}
-  >
-    <Fragment slot="title">Desde 1994 empeñados en enseñarte tenis.</Fragment>
+  <HeroMain />
+
+  <Hero>
+    <Fragment slot="subtitle"
+      >En nuestra academia de tenis, estamos comprometidos con el desarrollo integral de cada uno de nuestros jugadores.
+      Desde principiantes hasta profesionales, cada atleta que pasa por nuestras canchas encuentra un equipo de
+      entrenadores dedicados, un ambiente de camaradería y una metodología que se adapta a sus necesidades.
+    </Fragment>
   </Hero>
 
-  <Features
-    id="features"
+  <Content
+    isReversed
+    callToAction={{
+      text: 'Ver más',
+      href: '/clases',
+      icon: 'tabler:arrow-right',
+      variant: 'primary',
+    }}
     items={[
       {
-        title: 'Clases de tenis',
         description:
           'En nuestra academia, ofrecemos clases de tenis diseñadas para jugadores de todas las edades y niveles, desde principiantes hasta avanzados. Nuestro equipo de entrenadores certificados adapta cada sesión según las necesidades y objetivos de cada alumno, garantizando un progreso constante y personalizado.',
-        // icon: 'tabler:rocket',
-        callToAction: {
-          href: '/clases',
-          text: 'Ver más',
-          icon: 'tabler:arrow-right',
-          target: '_self',
-          variant: 'primary',
-        },
       },
+    ]}
+    image={{
+      src: 'https://images.pexels.com/photos/16780568/pexels-photo-16780568/free-photo-of-mujer-jugando-deporte-tenis.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      alt: 'Features Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Clases de tenis</h3>
+    </Fragment>
+  </Content>
+
+  <Content
+    callToAction={{
+      text: 'Ver más',
+      href: '/torneos',
+      icon: 'tabler:arrow-right',
+      variant: 'primary',
+    }}
+    items={[
       {
-        title: 'Torneos',
         description:
           'Creemos que la competencia es una parte fundamental del desarrollo de cualquier jugador. Por eso, organizamos torneos internos regulares para nuestros alumnos, brindándoles la oportunidad de poner a prueba sus habilidades en un entorno competitivo, pero a la vez amigable.',
-        // icon: 'tabler:star',
-        callToAction: {
-          href: 'https://primergolpe.com.ar/',
-          text: 'Ver más',
-          icon: 'tabler:arrow-right',
-          target: '_blank',
-          variant: 'primary',
-        },
       },
+    ]}
+    image={{
+      src: 'https://images.pexels.com/photos/11915639/pexels-photo-11915639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      alt: 'Features Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Torneos</h3>
+    </Fragment>
+  </Content>
+
+  <Content
+    isReversed
+    callToAction={{
+      text: 'Ver más',
+      href: '/clases',
+      icon: 'tabler:arrow-right',
+      variant: 'primary',
+    }}
+    items={[
       {
-        title: 'Escuela',
         description:
           'No solo nos enfocamos en mejorar el rendimiento físico y técnico de nuestros jugadores, sino también en ofrecerles herramientas que los ayuden a crecer como atletas y personas. Por eso, organizamos charlas motivacionales y educativas, impartidas por expertos en diferentes áreas, como psicología deportiva, nutrición, gestión emocional y entrenadores de alto nivel.',
-        // icon: 'tabler:bulb',
-        callToAction: {
-          href: '/escuela',
-          text: 'Ver más',
-          icon: 'tabler:arrow-right',
-          target: '_self',
-          variant: 'primary',
-        },
       },
-      {
-        title: 'Interclubes',
-        description:
-          'Las competencias interclubes son una oportunidad única para nuestros jugadores de medirse frente a otros tenistas de academias y clubes de toda la región. Estos torneos no solo ofrecen un nivel de competencia más alto, sino que también permiten a los participantes experimentar la emoción de representar a nuestra academia y poner en práctica todo lo que han aprendido en un entorno competitivo y profesional.',
-        // icon: 'tabler:star',
-      },
+    ]}
+    image={{
+      src: 'https://images.pexels.com/photos/8224768/pexels-photo-8224768.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      alt: 'Features Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Escuela de Tenis</h3>
+    </Fragment>
+  </Content>
+
+  <Note />
+
+  <Stats
+    stats={[
+      { title: 'Años', amount: '30' },
+      { title: 'Alumnos', amount: '1000' },
+      { title: 'Profesores', amount: '10' },
+      { title: 'Equipos', amount: '6' },
     ]}
   />
 
   <ImagesHome start={4} end={8} client:load />
 
-  <Stats
-    stats={[
-      { title: 'Jugadores', amount: '1000' },
-      { title: 'Torneos Realizados', amount: '22' },
-      { title: 'Equipos Interclubes', amount: '6' },
-      { title: 'Profesores', amount: '5' },
+  <Testimonials
+    title="Lo que nuestros alumnos piensan de nuestra escuela"
+    subtitle=" "
+    testimonials={[
+      {
+        testimonial: `Gracias a la academia, no solo he mejorado mi técnica, sino también mi mentalidad en la cancha. El equipo de entrenadores es increíble, siempre motivándonos a dar lo mejor en cada entrenamiento.`,
+        name: 'Mariano Arias',
+        job: 'Alumno de Lucas Corvalan',
+        image: {
+          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Mark Thompson Image',
+        },
+      },
+      {
+        testimonial: `El ambiente aquí es único. He aprendido mucho tanto de los entrenadores como de mis compañeros. El enfoque personalizado me ayudó a perfeccionar mis puntos débiles y a destacar en las competencias.`,
+        name: 'Emily Martinez',
+        job: 'Jugadora Interclubes',
+        image: {
+          src: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=772&q=80',
+          alt: 'Emily Martinez Image',
+        },
+      },
+      {
+        testimonial: `Lo que más aprecio de esta academia es la dedicación y el compromiso de los entrenadores. Siempre están pendientes de cada detalle, y eso ha hecho una gran diferencia en mi rendimiento. Sin duda, es el lugar perfecto para cualquier jugador que quiera alcanzar el siguiente nivel.`,
+        name: 'Laura Simmons',
+        job: 'Alumna de Raul',
+        image: {
+          src: 'https://images.unsplash.com/photo-1554727242-741c14fa561c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Laura Simmons Image',
+        },
+      },
     ]}
   />
 
-  <!-- <Note /> -->
-
   <Features2
     title="Encontranos en"
-    columns={1}
+    columns={2}
     items={[
       {
         title: 'Club Atletico Caza y Pesca',
+        description: 'Av. Ángel T. de Alvear 2100, Don Torcuato, Provincia de Buenos Aires',
+      },
+      {
+        title: 'Dubai Tenis y Padel',
         description: 'Av. Ángel T. de Alvear 2100, Don Torcuato, Provincia de Buenos Aires',
       },
     ]}

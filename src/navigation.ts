@@ -5,21 +5,17 @@ export const headerData = {
       href: '/clases',
     },
     {
-      text: 'Torneos',
-      href: 'https://primergolpe.com.ar/',
-      target: '_blank',
-    },
-    {
       text: 'Escuela',
       href: '/escuela',
     },
+
     {
-      text: 'Nosotros',
-      href: '/nosotros',
+      text: 'Torneos',
+      href: '/torneos',
     },
     {
-      text: 'Novedades',
-      href: '/blog',
+      text: 'Nosotros',
+      href: '/about',
     },
     {
       text: 'Contacto',

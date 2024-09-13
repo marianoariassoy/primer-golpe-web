@@ -1,0 +1,38 @@
+---
+import { Icon } from 'astro-icon/components';
+import { footerData } from '~/navigation';
+---
+
+<section class="w-full h-[calc(100vh-150px)] lg:aspect-video relative">
+  <div class="absolute top-0 h-full w-full flex items-center justify-center z-10">
+    <div class="max-w-4xl mx-auto text-5xl lg:text-6xl font-bold p-12 text-white text-center">
+      Desde 1994 empeñados en enseñarte tenis.
+    </div>
+  </div>
+  <img
+    src="https://images.pexels.com/photos/20544299/pexels-photo-20544299/free-photo-of-hombre-deporte-en-pie-de-pie.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1"
+    alt="Image Hero"
+    class="w-full h-full object-cover"
+  />
+  <div class="absolute left-4 lg:left-12 bottom-12 z-30 text-white flex gap-x-3 items-center">
+    {
+      footerData.socialLinks.map(({ ariaLabel, href, icon }) => (
+        <a
+          class="text-white hover:text-black text-sm inline-flex items-center"
+          aria-label={ariaLabel}
+          href={href}
+          target="_blank"
+        >
+          {icon && <Icon name={icon} class="w-6 h-6" />}
+        </a>
+      ))
+    }
+  </div>
+  <div
+    class="absolute bg-primary p-3 rounded-full right-4 lg:right-12 bottom-12 z-30 text-white flex gap-x-3 items-center hover:bg-black shadow-lg"
+  >
+    <a href="api.whatsapp.com/send?phone=5491151557285" target="_blank" rel="noopener noreferrer"
+      ><Icon name="tabler:brand-whatsapp" class="w-9 h-9" /></a
+    >
+  </div>
+</section>

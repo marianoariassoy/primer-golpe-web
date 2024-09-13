@@ -1,0 +1,20 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Torneos de tenis',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero actions={[{ variant: 'primary', target: '_blank', text: 'Ver torneos', href: 'https://primergolpe.com.ar/' }]}>
+    <Fragment slot="title">Torneos y competencias</Fragment>
+
+    <Fragment slot="subtitle">
+      Creemos que la competencia es una parte fundamental del desarrollo de cualquier jugador. Por eso, organizamos
+      torneos internos regulares para nuestros alumnos, brindándoles la oportunidad de poner a prueba sus habilidades en
+      un entorno competitivo, pero a la vez amigable.
+    </Fragment>
+  </Hero>
+</Layout>

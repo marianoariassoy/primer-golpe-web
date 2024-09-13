@@ -1,7 +1,5 @@
 ---
-import Features2 from '~/components/widgets/Features2.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
@@ -11,7 +9,7 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <Hero>
-    <Fragment slot="title">Un poco de historia</Fragment>
+    <Fragment slot="title">Nosotros</Fragment>
 
     <Fragment slot="subtitle">
       En nuestra academia de tenis, estamos comprometidos con el desarrollo integral de cada uno de nuestros jugadores.
@@ -19,26 +17,4 @@ const metadata = {
       entrenadores dedicados, un ambiente de camaradería y una metodología que se adapta a sus necesidades.
     </Fragment>
   </Hero>
-
-  <Steps2
-    title="Nuestros valores"
-    subtitle="Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus. Nulla facilisi. Vestibulum malesuada lacus."
-    items={[
-      {
-        title: 'Valores 1',
-        description:
-          'Donec id nibh neque. Quisque et fermentum tortor. Fusce vitae dolor a mauris dignissim commodo. Ut eleifend luctus condimentum.',
-      },
-      {
-        title: 'Valores 2',
-        description:
-          'Phasellus laoreet fermentum venenatis. Vivamus dapibus pulvinar arcu eget mattis. Fusce eget mauris leo.',
-      },
-      {
-        title: 'Valores 2',
-        description:
-          'Vestibulum imperdiet libero et lectus molestie, et maximus augue porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
-      },
-    ]}
-  />
 </Layout>
