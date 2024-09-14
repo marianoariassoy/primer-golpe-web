@@ -18,7 +18,7 @@ import { footerData } from '~/navigation';
     {
       footerData.socialLinks.map(({ ariaLabel, href, icon }) => (
         <a
-          class="text-white hover:text-black text-sm inline-flex items-center"
+          class="text-white hover:opacity-70 text-sm inline-flex items-center"
           aria-label={ariaLabel}
           href={href}
           target="_blank"
@@ -28,11 +28,11 @@ import { footerData } from '~/navigation';
       ))
     }
   </div>
-  <div
-    class="absolute bg-primary p-3 rounded-full right-4 lg:right-12 bottom-12 z-30 text-white flex gap-x-3 items-center hover:bg-black shadow-lg"
+
+  <a
+    href="api.whatsapp.com/send?phone=5491151557285"
+    class="absolute p-3 rounded-full right-4 lg:right-12 bottom-12 z-30 text-white flex gap-x-3 items-center btn-primary shadow-lg"
+    target="_blank"
+    rel="noopener noreferrer"><Icon name="tabler:brand-whatsapp" class="w-9 h-9" /></a
   >
-    <a href="api.whatsapp.com/send?phone=5491151557285" target="_blank" rel="noopener noreferrer"
-      ><Icon name="tabler:brand-whatsapp" class="w-9 h-9" /></a
-    >
-  </div>
 </section>
