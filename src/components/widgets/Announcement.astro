@@ -1,9 +1,20 @@
 ---
-
+import { Icon } from 'astro-icon/components';
 ---
 
-<div class="text-sm bg-black overflow-hidden px-4 py-4 relative text-center text-white">
-  CACYP, Av. Ángel T. de Alvear 2100, Don Torcuato.
-  <span class="hidden md:inline"> - </span>
-  <span class="block md:inline">Tel. 11 5155 7285</span>
+<div
+  class="text-xs bg-black overflow-hidden px-4 py-4 relative text-center text-white flex flex-col gap-y-1 items-center justify-center lg:hidden"
+>
+  <div>CACPYP, Av. Ángel T. de Alvear 2100, Don Torcuato.</div>
+  <div class="flex items-center">
+    <Icon name="tabler:phone" class="w-3 h-3" />
+    <span>11 5155 7285</span>
+  </div>
+</div>
+
+<div class="text-xs bg-black px-4 py-4 text-center text-white hidden lg:flex items-center gap-x-1 justify-center">
+  <span>Club Atlético Caza y Pesca, Av. Ángel T. de Alvear 2100, Don Torcuato.</span>
+  <span>-</span>
+  <Icon name="tabler:phone" class="w-3 h-3" />
+  <span>11 5155 7285</span>
 </div>

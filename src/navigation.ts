@@ -30,5 +30,5 @@ export const footerData = {
     { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://www.instagram.com/1ergolpetenis' },
     { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
   ],
-  footNote: 'Todos los derechos reservados. © 2024',
+  footNote: 'Todos los derechos reservados © Primergolpe 2024',
 };

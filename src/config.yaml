@@ -12,7 +12,7 @@ metadata:
   title:
     default: Primer Golpe
     template: '%s — Primer Golpe'
-  description: "\U0001F680 Escuela de Tenis."
+  description: 'Escuela de Tenis.'
   robots:
     index: true
     follow: true
